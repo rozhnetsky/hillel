@@ -40,26 +40,26 @@ fieldEmail.addEventListener("change", field => {
   let email;
   email = removeAllWhiteSpaces(inputValue);
   email = email.toLowerCase();
-  let errorMessage;
+  let outputMessage;
   let emailLength = email.length  - 1;
   const checkEmailSymbol = email.indexOf("@");
   
   switch (checkEmailSymbol) {
     case -1:
-      errorMessage = `not valid email <b>${email}</b> (symbol @ not exist)`;
+      outputMessage = `not valid email <b>${email}</b> (symbol @ not exist)`;
       break;
     case 0:
-      errorMessage = `not valid email <b>${email}</b> (symbol @ find in first place)`;
+      outputMessage = `not valid email <b>${email}</b> (symbol @ find in first place)`;
       break;
     case emailLength:
-      errorMessage = `not valid email <b>${email}</b> (symbol @ find in last place)`;
+      outputMessage = `not valid email <b>${email}</b> (symbol @ find in last place)`;
       break;
     default:
-      errorMessage = email;
+      outputMessage = email;
   }
   
   field.target.value = email;
-  inputEmail = errorMessage;
+  inputEmail = outputMessage;
 });
 
 fieldBday.addEventListener("change", field => {
