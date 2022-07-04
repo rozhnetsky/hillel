@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age form</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    
+    <form class="user-form" id="user-form">
+      <div class="user-form__row">
+        <label for="user-name">Ім'я</label>
+        <input type="text" id="user-name" required="required"/>
+      </div>
+      <div class="user-form__row">
+        <label for="user-surname">Фамілія</label>
+        <input type="text" id="user-surname" required="required"/>
+      </div>
+      <div class="user-form__row">
+        <label for="user-email">Ємейл</label>
+        <input type="text" id="user-email" required="required"/>
+        <div class="user-form__row-error"></div>
+      </div>
+      <div class="user-form__row">
+        <label for="user-bday">Рік народження</label>
+        <input type="text" id="user-bday" required="required" minlength="4" maxlength="4"/>
+        <div class="user-form__row-error"></div>
+      </div>
+      <input class="form__submit" id="submit" type="submit" value="Материнською платою клянуся, я не робот"/>
+    </form>
+    <div class="result" id="result"></div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+</html>
