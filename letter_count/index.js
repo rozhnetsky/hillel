@@ -22,5 +22,5 @@ submit.addEventListener("click", e => {
     i++;
   } while ( i < word.length);
 
-  outputResult.innerText = count;
+  outputResult.innerText = "The string contains the following number of '"+letter+"' letter: "+count;
 });
