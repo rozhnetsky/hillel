@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.form .form__body {
+  padding: 32px;
+  width: 500px;
+  background: #ddd;
+  border-radius: 6px;
+}
+.form .form__row {
+  width: 100%;
+  padding: 12px 0;
+}
+.form .form__text-field {
+  padding: 8px;
+  width: calc(100% - 24px);
+  height: 48px;
+  text-align: center;
+  font-size: 32px;
+}
+.form .form_cell {
+  margin-right: 16px;
+  display: inline-block;
+  cursor: default;
+}
+.form .form__result {
+  margin-top: 24px;
+  width: 100%;
+  font-size: 21px;
+  text-align: center;
+}
+.form .form__submit {
+  margin-top: 24px;
+  width: 100%;
+  height: 48px;
+}
+
+.form__result span{
+  width:  100%;
+  text-align: left;
+  display: inline-block;
+}
