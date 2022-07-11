@@ -1,0 +1,68 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url("img/fib-1.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: #fbfbf9;
+  background-size: auto 100%;
+}
+
+body.nan {
+  background-image: url("img/fib-2.png");
+}
+
+body.success {
+  background-image: url("img/fib-3.png");
+}
+
+body.large-num {
+  background-image: url("img/fib-4.png");
+}
+
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.form .form__body {
+  position: absolute;
+  left: 100px;
+  padding: 32px;
+  width: 500px;
+  background: #ddd;
+  border-radius: 6px;
+}
+.form .form__row {
+  width: 100%;
+  padding: 12px 0;
+}
+.form .form__text-field {
+  padding: 8px;
+  width: calc(100% - 24px);
+  height: 48px;
+  text-align: center;
+  font-size: 32px;
+}
+.form .form_cell {
+  margin-right: 16px;
+  display: inline-block;
+  cursor: default;
+}
+.form .form__result {
+  margin-top: 24px;
+  width: 100%;
+  font-size: 21px;
+  text-align: center;
+}
+.form .form__submit {
+  margin-top: 24px;
+  width: 100%;
+  height: 48px;
+}
