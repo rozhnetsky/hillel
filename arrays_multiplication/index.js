@@ -15,4 +15,4 @@ const arrMultiplication = (array1, array2) => {
 
 arrMultiplication(arr1, arr2);
 
-console.log(nerArr);
+document.write(nerArr.join(', '));
