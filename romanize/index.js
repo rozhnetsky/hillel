@@ -12,7 +12,7 @@ const romanize = num => {
         let hundred = Math.floor(num / 100) < 10 ? Math.floor(num / 100) : Math.floor(num / 100) % 10;
         let thousand = Math.floor(num / 1000) < 10 ? Math.floor(num / 1000) : Math.floor(num / 1000) % 10;
         outputResult = thousands[thousand] + hundreds[hundred] + tens[tenth] + units[unit];
-        return outputResult;
+        return num + " is " + outputResult;
     } else return "Sorry! Out of range"
 }
 
