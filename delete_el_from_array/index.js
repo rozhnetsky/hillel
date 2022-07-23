@@ -7,7 +7,6 @@ const deleteElement = (array, element) => {
 
 arr = deleteElement(arr, 56)
 
-const deleteResult = deleteElement(arr, 56);
 const outputResult = arr.join(" , ");
 
 document.write( "[ "+outputResult+" ]" );
