@@ -1,4 +1,4 @@
-const flattenArr = (array) => {
+const flattenArr = array => {
     let resultArray = [];
     array.forEach((childArray, index) => resultArray = resultArray.concat(array[index]));
     return resultArray;
