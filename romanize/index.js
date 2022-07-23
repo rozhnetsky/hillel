@@ -4,17 +4,21 @@ const hundreds = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"];
 const thousands = ["","M","MM","MMM"];
 
 const romanize = num => {
-    let outputResult;
     if (isNaN(num)) return "Not a number";
-    if (num <= 2999) {
+
+    const floor = (num, division) => Math.floor(num / division);
+
+    if (num <= 3999) {
         let unit = num % 10;
-        let tenth = Math.floor(num / 10) < 10 ? Math.floor(num / 10) : Math.floor(num / 10) % 10;
-        let hundred = Math.floor(num / 100) < 10 ? Math.floor(num / 100) : Math.floor(num / 100) % 10;
-        let thousand = Math.floor(num / 1000) < 10 ? Math.floor(num / 1000) : Math.floor(num / 1000) % 10;
-        outputResult = thousands[thousand] + hundreds[hundred] + tens[tenth] + units[unit];
+        let tenth = floor(num, 10) < 10 ? floor(num, 10) : floor(num, 10) % 10;
+        let hundred = floor(num, 100) < 10 ? floor(num, 100) : floor(num, 100) % 10;
+        let thousand = floor(num, 1000) < 10 ? floor(num, 1000) : floor(num, 1000) % 10;
+        let outputResult = thousands[thousand] + hundreds[hundred] + tens[tenth] + units[unit];
         return num + " is " + outputResult;
     } else return "Sorry! Out of range"
 }
+
+console.log(romanize("string"));
 
 console.log(romanize(1989));
 
@@ -43,3 +47,7 @@ console.log(romanize(99));
 console.log(romanize(100));
 
 console.log(romanize(2021));
+
+console.log(romanize(3999));
+
+console.log(romanize(4000));
