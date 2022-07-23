@@ -8,9 +8,7 @@ const deleteElement = (array, element) => {
 arr = deleteElement(arr, 56)
 
 const deleteResult = deleteElement(arr, 56);
-const outputResult = deleteResult.join(" , ");
-
+const outputResult = arr.join(" , ");
 
 document.write( "[ "+outputResult+" ]" );
-
-console.log( deleteResult );
+console.log( arr );
