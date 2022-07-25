@@ -7,7 +7,7 @@ const findPalindrome = input => {
   for (let i = 0; i < input.length / 2; i++) {
     let comparedIndex = input.length - i - 1;
     if (input[i] !== input[comparedIndex]) return false;
-  };
+  }
   return true;
 };
 

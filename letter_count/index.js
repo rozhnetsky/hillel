@@ -16,7 +16,7 @@ submit.addEventListener("click", e => {
   const word = inputWord.value;
 
   let i = 0;
-  count = 0;
+  let count = 0;
   do {
     count = letter === word[i] ? count+1 : count;
     i++;
