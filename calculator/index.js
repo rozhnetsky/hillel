@@ -50,9 +50,8 @@ const buttonInput = () => {
 const buttonDo = () => {
     doButton.forEach(e => {
         e.addEventListener("click",() => {
-            const buttonAction = e.getAttribute("action");
+            action = e.getAttribute("action");
             updateInputValues();
-            action = buttonAction;
         })
     });
 }
@@ -90,8 +89,12 @@ const calcResultInit = () => {
         console.log("Calc Error");
   }
   result.innerText = parseFloat(calcResult.toFixed(12)).toString();
-  setDefaultValues();
   firstValue = calcResult;
+  secondValue = false;
+  secondStep = true;
+  startNewStep = true;
+  dot = false;
+  action = false;
 }
 
 const calcInit = () => {
