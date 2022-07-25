@@ -5,11 +5,11 @@ const reset = document.getElementById("reset");
 const inputButton = document.querySelectorAll(".calculator__button--num");
 const doButton = document.querySelectorAll(".calculator__button--control");
 
-let firstValue;
-let secondValue;
-let dot;
-let action;
-let calcResult;
+let firstValue = false;
+let secondValue = false;
+let dot = false;
+let action = false;
+let startNewStep = false;
 let secondStep = false;
 
 const setDefaultValues = () => {
@@ -17,16 +17,20 @@ const setDefaultValues = () => {
     secondValue = false;
     dot = false;
     action = false;
+    startNewStep = false;
+    secondStep = false;
 }
 
 const buttonInput = () => {
     inputButton.forEach(e => {
         e.addEventListener("click",() => {
             let buttonValue = e.getAttribute("value");
-            if (secondStep) {
+
+            if (startNewStep) {
                 result.innerText = "";
-                secondStep = false;
+                startNewStep = false;
             }
+
             if (buttonValue === ".") {
                 if (dot) return;
                 dot = true;
@@ -35,7 +39,10 @@ const buttonInput = () => {
             if (buttonValue !== "." && result.innerText === "0") result.innerText = "";
 
             result.innerText += buttonValue;
-            calcResult = parseFloat(result.innerText);
+            if (secondStep)
+                secondValue = parseFloat(result.innerText);
+            else
+                firstValue = parseFloat(result.innerText);
         })
     });
 }
@@ -51,22 +58,21 @@ const buttonDo = () => {
 }
 
 const updateInputValues  = () => {
-    if (!firstValue) {
-        firstValue = calcResult;
-        calcResult = 0;
+    if (!secondValue) {
+        startNewStep = true;
         secondStep = true;
         dot = false;
         return;
     }
-    secondValue = calcResult;
     calcResultInit();
-    console.log(firstValue, action, secondValue, calcResult);
 }
 
 const calcResultInit = () => {
-  if (!firstValue && !secondValue && !action) return;
-  const x = firstValue;
-  const y = secondValue;
+  if (!firstValue || !secondValue || !action)
+    return;
+  let x = firstValue;
+  let y = secondValue;
+  let calcResult;
   switch(action) {
       case "multiply":
         calcResult = x * y;
@@ -84,11 +90,8 @@ const calcResultInit = () => {
         console.log("Calc Error");
   }
   result.innerText = parseFloat(calcResult.toFixed(12)).toString();
+  setDefaultValues();
   firstValue = calcResult;
-  secondValue = false;
-  dot = false;
-  calcResult = 0;
-  secondStep = true;
 }
 
 const calcInit = () => {
