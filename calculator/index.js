@@ -5,12 +5,12 @@ const reset = document.getElementById("reset");
 const inputButton = document.querySelectorAll(".calculator__button--num");
 const doButton = document.querySelectorAll(".calculator__button--control");
 
-let firstValue = undefined;
-let secondValue = undefined;
-let dot = false;
-let action = false;
-let startNewStep = false;
-let secondStep = false;
+let firstValue;
+let secondValue;
+let dot;
+let action;
+let startNewStep;
+let secondStep;
 
 const setDefaultValues = () => {
     firstValue = undefined;
