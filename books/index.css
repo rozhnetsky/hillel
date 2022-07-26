@@ -7,6 +7,8 @@ body, html {
     flex-direction: column;
     align-items: stretch;
     padding: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .book {
