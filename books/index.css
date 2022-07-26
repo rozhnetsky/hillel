@@ -14,6 +14,7 @@ body, html {
 .book {
     display: flex;
     align-items: center;
+    position: relative;
     padding: 24px 128px;
     background: #eee;
     border-radius: 8px;
@@ -38,6 +39,8 @@ body, html {
     overflow: hidden;
     border-radius: 3px;
     box-shadow: 0 0 20px #00000050, 0 20px 40px #00000035, 0 40px 80px #00000020;
+    position: relative;
+    z-index: 1;
 }
 
 .book:nth-child(2n) .book__cover  {
@@ -52,6 +55,8 @@ body, html {
 
 .book__description {
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .book__author {
@@ -59,4 +64,45 @@ body, html {
     color: #555;
     font-style: italic;
     font-size: 36px;
+}
+
+.book__bg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 700px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.book:nth-child(2n) .book__bg {
+    left: auto;
+    right: 0;
+}
+
+.book__bg:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: linear-gradient(-90deg, #eee, #eeeeee00);
+}
+
+.book:nth-child(2n) .book__bg:after {
+    left: 0;
+    right: auto;
+    background: linear-gradient(90deg, #eee, #eeeeee00);
+}
+
+.book__bg img {
+    width: 300%;
+    height: 300%;
+    object-fit: cover;
+    filter: blur(50px);
 }

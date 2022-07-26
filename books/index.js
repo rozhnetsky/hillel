@@ -50,6 +50,9 @@ for(let book of books) {
           <div class="book__title">${book.title}</div>
           <div class="book__author">${book.author}</div>
       </div>
+      <div class="book__bg">
+        <img src="${book.path}.jpeg" alt="${book.title}" /> 
+      </div>
     </div>
   `
 }
