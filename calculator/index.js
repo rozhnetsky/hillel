@@ -5,16 +5,16 @@ const reset = document.getElementById("reset");
 const inputButton = document.querySelectorAll(".calculator__button--num");
 const doButton = document.querySelectorAll(".calculator__button--control");
 
-let firstValue = false;
-let secondValue = false;
+let firstValue = undefined;
+let secondValue = undefined;
 let dot = false;
 let action = false;
 let startNewStep = false;
 let secondStep = false;
 
 const setDefaultValues = () => {
-    firstValue = false;
-    secondValue = false;
+    firstValue = undefined;
+    secondValue = undefined;
     dot = false;
     action = false;
     startNewStep = false;
@@ -50,25 +50,26 @@ const buttonInput = () => {
 const buttonDo = () => {
     doButton.forEach(e => {
         e.addEventListener("click",() => {
-            action = e.getAttribute("action");
             updateInputValues();
+            action = e.getAttribute("action");
         })
     });
 }
 
 const updateInputValues  = () => {
-    if (!secondValue) {
+    if (!secondStep) {
         startNewStep = true;
         secondStep = true;
         dot = false;
         return;
     }
+    console.log(firstValue, secondValue, action);
+    if (firstValue === undefined || secondValue === undefined || !action)
+        return
     calcResultInit();
 }
 
 const calcResultInit = () => {
-  if (!firstValue || !secondValue || !action)
-    return;
   let x = firstValue;
   let y = secondValue;
   let calcResult;
@@ -89,12 +90,12 @@ const calcResultInit = () => {
         console.log("Calc Error");
   }
   result.innerText = parseFloat(calcResult.toFixed(12)).toString();
+  console.log(calcResult);
   firstValue = calcResult;
-  secondValue = false;
+  secondValue = undefined;
   secondStep = true;
   startNewStep = true;
   dot = false;
-  action = false;
 }
 
 const calcInit = () => {
