@@ -106,3 +106,22 @@ body, html {
     object-fit: cover;
     filter: blur(50px);
 }
+
+.book--bestseller:after {
+    content: "Bestseller";
+    position: absolute;
+    z-index: 5;
+    font-style: italic;
+    font-size: 16px;
+    right: 0;
+    top: 24px;
+    background: orange;
+    padding: 12px 24px;
+    border-radius: 28px 0 0 28px;
+}
+
+.book.book--bestseller:nth-child(2n):after {
+    right: auto;
+    left: 0;
+    border-radius: 0 28px 28px 0;
+}

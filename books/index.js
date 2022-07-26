@@ -8,7 +8,8 @@ const books = [
     {
         title: 'Lord of&nbsp;the&nbsp;Rings',
         author: 'J.R.R. Tolkien',
-        path: 'images/lord_of_the_rings'
+        path: 'images/lord_of_the_rings',
+        bestseller: true
     },
     {
         title: 'Harry Potter and the&nbsp;Sorcerer\'s&nbsp;Stone',
@@ -23,12 +24,14 @@ const books = [
     {
         title: 'Twenty Thousand Leagues Under&nbsp;the&nbsp;Sea',
         author: 'Jules Verne',
-        path: 'images/twenty_thousand_leagues_under_the_sea'
+        path: 'images/twenty_thousand_leagues_under_the_sea',
+        bestseller: true
     },
     {
         title: 'Moby Dick',
         author: 'Herman Melville',
-        path: 'images/moby_dick'
+        path: 'images/moby_dick',
+        bestseller: true
     },
     {
         title: 'The Picture of Dorian Gray',
@@ -38,11 +41,11 @@ const books = [
 ]
 
 for(let book of books) {
-  console.log(book.title)
-  console.log(book.author)
-  console.log(book.path)
+  let bookClass = "book";
+  if(book.bestseller)
+    bookClass = "book book--bestseller";
   booksGrid.innerHTML += `
-    <div class="book">
+    <div class="${bookClass}">
       <div class="book__cover">
         <img src="${book.path}.jpeg" alt="${book.title}" /> 
       </div>
