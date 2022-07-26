@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+}
+
+#books-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 48px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    padding: 24px 128px;
+    background: #eee;
+    border-radius: 8px;
+    font-size: 48px;
+    font-family: "Times New Roman", serif;
+}
+
+.book:nth-child(2n)  {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.book:not(:last-child) {
+    margin-bottom: 64px;
+}
+
+.book__cover {
+    display: flex;
+    margin: -48px 128px -48px 0;
+    width: 320px;
+    min-width: 320px;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 20px #00000050, 0 20px 40px #00000035, 0 40px 80px #00000020;
+}
+
+.book:nth-child(2n) .book__cover  {
+    margin: -48px 0 -48px 128px;
+}
+
+.book__cover img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.book__description {
+    width: 100%;
+}
+
+.book__author {
+    margin-top: 24px;
+    color: #555;
+    font-style: italic;
+    font-size: 36px;
+}
