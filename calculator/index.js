@@ -26,17 +26,7 @@ const buttonInput = () => {
         e.addEventListener("click",() => {
             let buttonValue = e.getAttribute("value");
 
-            if (startNewStep) {
-                result.innerText = "";
-                startNewStep = false;
-            }
-
-            if (buttonValue === ".") {
-                if (dot) return;
-                dot = true;
-            }
-            if (buttonValue === "0" && result.innerText === "0") return;
-            if (buttonValue !== "." && result.innerText === "0") result.innerText = "";
+            updateInput(buttonValue);
 
             result.innerText += buttonValue;
             if (secondStep)
@@ -47,16 +37,30 @@ const buttonInput = () => {
     });
 }
 
+const updateInput = buttonValue => {
+    if (startNewStep) {
+        result.innerText = "";
+        startNewStep = false;
+    }
+
+    if (buttonValue === ".") {
+        if (dot) return;
+        dot = true;
+    }
+    if (buttonValue === "0" && result.innerText === "0") return;
+    if (buttonValue !== "." && result.innerText === "0") result.innerText = "";
+}
+
 const buttonDo = () => {
     doButton.forEach(e => {
         e.addEventListener("click",() => {
-            updateInputValues();
+            checkInputValues();
             action = e.getAttribute("action");
         })
     });
 }
 
-const updateInputValues  = () => {
+const checkInputValues  = () => {
     if (!secondStep) {
         startNewStep = true;
         secondStep = true;
@@ -100,7 +104,7 @@ const calcResultInit = () => {
 
 const calcInit = () => {
     calc.addEventListener("click",() => {
-        updateInputValues();
+        checkInputValues();
     })
 }
 
