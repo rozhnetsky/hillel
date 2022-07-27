@@ -41,20 +41,21 @@ const books = [
 ]
 
 for(let book of books) {
-  let bookClass = "book";
-  if(book.bestseller)
+  let {title, author, path, bestseller = "book"} = book;
+  let bookClass = bestseller;
+  if(bestseller)
     bookClass = "book book--bestseller";
   booksGrid.innerHTML += `
     <div class="${bookClass}">
       <div class="book__cover">
-        <img src="${book.path}.jpeg" alt="${book.title}" /> 
+        <img src="${path}.jpeg" alt="${title}" /> 
       </div>
        <div class="book__description">
-          <div class="book__title">${book.title}</div>
-          <div class="book__author">${book.author}</div>
+          <div class="book__title">${title}</div>
+          <div class="book__author">${author}</div>
       </div>
       <div class="book__bg">
-        <img src="${book.path}.jpeg" alt="${book.title}" /> 
+        <img src="${path}.jpeg"  alt=""/> 
       </div>
     </div>
   `
