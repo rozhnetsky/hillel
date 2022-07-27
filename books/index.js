@@ -41,10 +41,8 @@ const books = [
 ]
 
 for(let book of books) {
-  let {title, author, path, bestseller = "book"} = book;
-  let bookClass = bestseller;
-  if(bestseller)
-    bookClass = "book book--bestseller";
+  let {title, author, path, bestseller} = book;
+  let bookClass = bestseller ? "book book--bestseller" : "book";
   booksGrid.innerHTML += `
     <div class="${bookClass}">
       <div class="book__cover">
