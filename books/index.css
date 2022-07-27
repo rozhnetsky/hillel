@@ -53,7 +53,7 @@ body, html {
     object-fit: cover;
 }
 
-.book__description {
+.book__section {
     width: 100%;
     position: relative;
     z-index: 1;
@@ -124,4 +124,16 @@ body, html {
     right: auto;
     left: 0;
     border-radius: 0 28px 28px 0;
+}
+
+.book__description {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444;
+}
+
+.book__stars img{
+    width: 18px;
+    height: 18px;
 }
