@@ -1,0 +1,123 @@
+body, html {
+	height: 100%;
+	font-size: 24px;
+	font-family: "Arial", sans-serif;
+	padding: 0;
+	background: #fff;
+}
+
+.products {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 32px;
+	padding: 32px;
+}
+
+.products_item {
+	display: flex;
+	align-items: flex-end;
+	position: relative;
+	padding: 32px;
+	width: 100%;
+	height: 300px;
+	box-sizing: border-box;
+	background: #eee;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.product__item--furniture {
+	background: #f5f0e4;
+}
+
+.product__item--devices {
+	background: #e4e9f5;
+}
+
+.product__item--appliances {
+	background: #e4f5ea;
+}
+
+.products_type {
+	margin-top: 36px;
+}
+
+.products_category {
+	opacity: .3;
+}
+
+.products_price {
+	margin-top: 16px;
+	font-size: 16px;
+}
+
+.products_thumb {
+	position: absolute;
+	right: 30px;
+	top: 25px;
+	width: 96px;
+	height: 96px;
+	padding: 24px;
+	z-index: 1;
+}
+
+.products_thumb:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	border-radius: 100%;
+	background: #fff;
+	z-index: 0;
+	transform: translate(-50%, -50%);
+}
+
+.products_thumb:after {
+	content: "";
+	position: absolute;
+	width: 360px;
+	height: 360px;
+	left: 50%;
+	top: 50%;
+	border-radius: 100%;
+	background: #ccc;
+	z-index: -1;
+	transform: translate(-50%, -50%);
+	opacity: .5;
+}
+
+.products_thumb img {
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.product__item--furniture .products_thumb:after {
+	background: #e5dfd1;
+}
+
+.product__item--devices .products_thumb:after {
+	background: #d0d7e9;
+}
+
+.product__item--appliances .products_thumb:after {
+	background: #d3e8db;
+}
+
+.products_details {
+	position: relative;
+	z-index: 1;
+}
+
+/*.product__bg {
+	width: auto;
+	height: 80%;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(15%, -50%);
+	opacity: .2;
+	filter: blur(4px);
+}*/
