@@ -92,6 +92,7 @@ body, html {
 	position: relative;
 	width: 100%;
 	z-index: 1;
+	transform: rotate(7.5deg);
 }
 
 .product__item--furniture .products_thumb:after {
@@ -110,14 +111,3 @@ body, html {
 	position: relative;
 	z-index: 1;
 }
-
-/*.product__bg {
-	width: auto;
-	height: 80%;
-	position: absolute;
-	right: 0;
-	top: 50%;
-	transform: translate(15%, -50%);
-	opacity: .2;
-	filter: blur(4px);
-}*/

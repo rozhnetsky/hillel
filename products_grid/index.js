@@ -1,5 +1,8 @@
 const productsGrid = document.querySelector(".products");
-const currency = "USD";
+const CURRENCIES = {
+    "USD" : "USD",
+    "UAH" : "UAH"
+};
 
 const furniture = [
     {
@@ -65,8 +68,8 @@ function Product (category, type, price) {
     const typeLine = type.charAt(0).toUpperCase() + type.slice(1);
     const priceLine = 
         price.length !== undefined ? 
-        price.join(" - ") + " " + currency : 
-        price + " " + currency;
+        price.join(" - ") + " " + CURRENCIES.USD : 
+        price + " " + CURRENCIES.USD;
     this.render = () => {
         return (
         `<div class="products_item product__item--${category.toLowerCase()}">
@@ -83,8 +86,8 @@ function Product (category, type, price) {
 };
 
 
-const products = (array, category) => {
-    for(let product of array) {
+const products = (products, category) => {
+    for(let product of products) {
         const {type, price, render} = product;
         const addProduct = new Product(category, type, price);
         productsGrid.innerHTML += addProduct.render();
