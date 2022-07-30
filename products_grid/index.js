@@ -86,7 +86,8 @@ function Product (category, type, price) {
 };
 
 
-const products = (products, category) => {
+const products = category => {
+    const products = eval(category.toLowerCase());
     for(let product of products) {
         const {type, price, render} = product;
         const addProduct = new Product(category, type, price);
@@ -94,8 +95,8 @@ const products = (products, category) => {
     };
 };
 
-products(furniture, "Furniture");
+products("Furniture");
 
-products(devices, "Devices");
+products("Devices");
 
-products(appliances, "Appliances");
+products("Appliances");
