@@ -74,7 +74,7 @@ function Product (category, type, price) {
         return (
         `<div class="products_item product__item--${category.toLowerCase()}">
             <div class="products_thumb">
-                <img src="images/${category}/${type}.svg" alt="${typeLine} illustration" />
+                <img src="images/${category.toLowerCase()}/${type}.svg" alt="${typeLine} illustration" />
             </div>
             <div class="products_details">
                 <div class="products_type"><span class="products_category">${category}/</span> ${typeLine}</div>
