@@ -13,7 +13,7 @@ body, html {
 	padding: 32px;
 }
 
-.products_item {
+.products__item {
 	display: flex;
 	align-items: flex-end;
 	position: relative;
@@ -38,20 +38,20 @@ body, html {
 	background: #e4f5ea;
 }
 
-.products_type {
+.products__type {
 	margin-top: 36px;
 }
 
-.products_category {
+.products__category {
 	opacity: .3;
 }
 
-.products_price {
+.products__price {
 	margin-top: 16px;
 	font-size: 16px;
 }
 
-.products_thumb {
+.products__thumb {
 	position: absolute;
 	right: 30px;
 	top: 25px;
@@ -61,7 +61,7 @@ body, html {
 	z-index: 1;
 }
 
-.products_thumb:before {
+.products__thumb:before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -74,7 +74,7 @@ body, html {
 	transform: translate(-50%, -50%);
 }
 
-.products_thumb:after {
+.products__thumb:after {
 	content: "";
 	position: absolute;
 	width: 360px;
@@ -88,26 +88,26 @@ body, html {
 	opacity: .5;
 }
 
-.products_thumb img {
+.products__thumb img {
 	position: relative;
 	width: 100%;
 	z-index: 1;
 	transform: rotate(7.5deg);
 }
 
-.product__item--furniture .products_thumb:after {
+.product__item--furniture .products__thumb:after {
 	background: #e5dfd1;
 }
 
-.product__item--devices .products_thumb:after {
+.product__item--devices .products__thumb:after {
 	background: #d0d7e9;
 }
 
-.product__item--appliances .products_thumb:after {
+.product__item--appliances .products__thumb:after {
 	background: #d3e8db;
 }
 
-.products_details {
+.products__details {
 	position: relative;
 	z-index: 1;
 }

@@ -65,20 +65,22 @@ function Product (category, type, price) {
     this.category = category;
     this.type = type;
     this.price = price;
+
     const typeLine = type.charAt(0).toUpperCase() + type.slice(1);
     const priceLine = 
         price.length !== undefined ? 
         price.join(" - ") + " " + CURRENCIES.USD : 
         price + " " + CURRENCIES.USD;
+
     this.render = () => {
         return (
-        `<div class="products_item product__item--${category.toLowerCase()}">
-            <div class="products_thumb">
+        `<div class="products__item product__item--${category.toLowerCase()}">
+            <div class="products__thumb">
                 <img src="images/${category.toLowerCase()}/${type}.svg" alt="${typeLine} illustration" />
             </div>
-            <div class="products_details">
-                <div class="products_type"><span class="products_category">${category}/</span> ${typeLine}</div>
-                <div class="products_price">${priceLine}</div>
+            <div class="products__details">
+                <div class="products__type"><span class="products__category">${category}/</span> ${typeLine}</div>
+                <div class="products__price">${priceLine}</div>
             </div>
         </div>`
         );
