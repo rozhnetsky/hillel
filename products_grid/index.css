@@ -110,7 +110,7 @@ body, html {
 }
 
 .products__item:hover .products__thumb img {
-	transform: scale(1.5);
+	transform: scale(1.6);
 }
 
 .product__item--furniture .products__thumb:after {
