@@ -24,6 +24,9 @@ body, html {
 	background: #eee;
 	border-radius: 6px;
 	overflow: hidden;
+	box-shadow: 0 0 0 #00000010;
+	transition: box-shadow .3s ease-out;
+	cursor: pointer;
 }
 
 .product__item--furniture {
@@ -71,6 +74,7 @@ body, html {
 	border-radius: 100%;
 	background: #fff;
 	z-index: 0;
+	transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
 	transform: translate(-50%, -50%);
 }
 
@@ -85,7 +89,16 @@ body, html {
 	background: #ccc;
 	z-index: -1;
 	transform: translate(-50%, -50%);
+	transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
 	opacity: .5;
+}
+
+.products__item:hover .products__thumb:after {
+	transform: translate(-50%, -50%) scale(1.5);
+}
+
+.products__item:hover .products__thumb:before {
+	transform: translate(-50%, -50%) scale(1.2);
 }
 
 .products__thumb img {
@@ -93,6 +106,11 @@ body, html {
 	width: 100%;
 	z-index: 1;
 	transform: rotate(7.5deg);
+	transition: transform .5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.products__item:hover .products__thumb img {
+	transform: scale(1.5);
 }
 
 .product__item--furniture .products__thumb:after {

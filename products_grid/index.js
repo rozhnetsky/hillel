@@ -4,6 +4,8 @@ const CURRENCIES = {
     "UAH" : "UAH"
 };
 
+console.log(CURRENCIES);
+
 const furniture = [
     {
         type: 'desk',
