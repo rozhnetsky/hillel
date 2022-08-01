@@ -11,7 +11,6 @@ function Car (model, year) {
     this.year = year;
     this.numWheels = 4;
     this.__proto__ = vehicle.constructor(model, year);
-    return this;
 }
 
 function Motorcycle (model, year) {
@@ -20,7 +19,6 @@ function Motorcycle (model, year) {
     this.year = year;
     this.numWheels = 2;
     this.__proto__ = vehicle.constructor(model, year);
-    return this;
 }
 
 const car = new Car('Tesla', 2020);
@@ -31,6 +29,7 @@ console.log(car.numWheels); // 4
 console.log(car.start()); // The engine has been started
 console.log(car.end()); // Engine was off
 console.log(car.toString()); // The model is Tesla. Release year 2020
+
 
 const motorcycle = new Motorcycle('Suzuki', 2006);
 console.log(motorcycle);
