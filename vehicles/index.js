@@ -13,7 +13,6 @@ function Car (model, year) {
 }
 
 function Motorcycle (model, year) {
-    // const vehicle = Object.create(Vehicle.prototype);
     this.model = model;
     this.year = year;
     this.numWheels = 2;
