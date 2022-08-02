@@ -6,19 +6,18 @@ function Vehicle(model, year) {
 }
 
 function Car (model, year) {
-    const vehicle = Object.create(Vehicle.prototype);
     this.model = model;
     this.year = year;
     this.numWheels = 4;
-    this.__proto__ = vehicle.constructor(model, year);
+    this.__proto__ = Vehicle.prototype.constructor(model, year);
 }
 
 function Motorcycle (model, year) {
-    const vehicle = Object.create(Vehicle.prototype);
+    // const vehicle = Object.create(Vehicle.prototype);
     this.model = model;
     this.year = year;
     this.numWheels = 2;
-    this.__proto__ = vehicle.constructor(model, year);
+    this.__proto__ = Vehicle.prototype.constructor(model, year);
 }
 
 const car = new Car('Tesla', 2020);
