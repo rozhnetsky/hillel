@@ -9,21 +9,21 @@ Vehicle.prototype.toString = function() {
     return `The model is ${this.model}. Release year ${this.year}`;
 }
 
-function Car (model, year) {
-    Vehicle.call(this, model, year);
+function Car (...args) {
+    Vehicle.apply(this, args);
     this.numWheels = 4;
 }
 
 Car.prototype = Object.create(Vehicle.prototype);
-Car.prototype.constructor = Vehicle;
+Car.prototype.constructor = Car;
 
-function Motorcycle (model, year) {
-    Vehicle.call(this, model, year);
+function Motorcycle (...args) {
+    Vehicle.apply(this, args);
     this.numWheels = 2;
 }
 
 Motorcycle.prototype = Object.create(Vehicle.prototype);
-Motorcycle.prototype.constructor = Vehicle;
+Motorcycle.prototype.constructor = Motorcycle;
 
 const car = new Car('Tesla', 2020);
 console.log(car);
