@@ -43,3 +43,26 @@ console.log(motorcycle.numWheels); // 2
 console.log(motorcycle.start()); // The engine has been started
 console.log(motorcycle.end()); // Engine was off
 console.log(motorcycle.toString()); // The model is Suzuki. Release year 2006
+
+Vehicle.prototype.start = () => "This is bike engine start";
+Vehicle.prototype.end = () => "This is bike engine end";
+Vehicle.prototype.toString = function() {
+    return `The Bike brand is ${this.model}. Bike released in ${this.year}`;
+}
+
+function Bike (...args) {
+    Vehicle.apply(this, args);
+    this.numWheels = 2;
+}
+
+Bike.prototype = Object.create(Vehicle.prototype);
+Bike.prototype.constructor = Bike;
+
+const bike = new Bike('BMX', 2002);
+console.log(bike);
+console.log(bike.model); // Suzuki
+console.log(bike.year); // 2006
+console.log(bike.numWheels); // 2
+console.log(bike.start()); // The engine has been started
+console.log(bike.end()); // Engine was off
+console.log(bike.toString()); // The model is Suzuki. Release year 2006
