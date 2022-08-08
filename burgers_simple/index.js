@@ -33,7 +33,7 @@ class Hamburger {
     }
 
     addToppings(ingredients) {
-        if (Array.isArray(ingredients)) {
+        if (Array.isArray(ingredients[0])) {
             for(let el of ingredients){
                 this.toppings.push(el);
             }
@@ -69,4 +69,10 @@ burger.addSupplement(HAMBURGER.supplements.mayonnaise);
 burger.getPrice();
 burger.getCalories();
 
+
+const burger2 = new Hamburger();
+burger2.addToppings(HAMBURGER.toppings.cheese);
+burger2.addSupplement(HAMBURGER.supplements.ketchup);
+burger2.getPrice();
+burger2.getCalories();
 
