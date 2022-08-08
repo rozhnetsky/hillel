@@ -62,17 +62,18 @@ class Hamburger {
 }
 
 const burger = new Hamburger();
-console.log(burger);
+burger.size = HAMBURGER.size.large;
 burger.addToppings([HAMBURGER.toppings.salad, HAMBURGER.toppings.tomato]);
 burger.addSupplement(HAMBURGER.supplements.mayonnaise);
 burger.getPrice();
 burger.getCalories();
+console.log(burger);
 
 
 const burger2 = new Hamburger();
-console.log(burger2);
 burger2.addToppings(HAMBURGER.toppings.cheese);
 burger2.addSupplement(HAMBURGER.supplements.ketchup);
 burger2.getPrice();
 burger2.getCalories();
+console.log(burger2);
 
