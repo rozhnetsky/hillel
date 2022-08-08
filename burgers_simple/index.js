@@ -20,8 +20,6 @@ class Hamburger {
         this.size = HAMBURGER.size.small;
         this.toppings = [];
         this.supplements = [];
-        this.amount = this.size[0];
-        this.calories = this.size[1];
     }
 
     calc(ingredients, index) {
@@ -64,6 +62,7 @@ class Hamburger {
 }
 
 const burger = new Hamburger();
+console.log(burger);
 burger.addToppings([HAMBURGER.toppings.salad, HAMBURGER.toppings.tomato]);
 burger.addSupplement(HAMBURGER.supplements.mayonnaise);
 burger.getPrice();
@@ -71,6 +70,7 @@ burger.getCalories();
 
 
 const burger2 = new Hamburger();
+console.log(burger2);
 burger2.addToppings(HAMBURGER.toppings.cheese);
 burger2.addSupplement(HAMBURGER.supplements.ketchup);
 burger2.getPrice();
