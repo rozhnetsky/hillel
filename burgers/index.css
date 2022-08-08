@@ -1,46 +1,130 @@
 body, html {
-	height: 100%;
-	font-size: 18px;
-	font-family: "Arial", sans-serif;
-	padding: 0;
-	background: #fff;
+    height: 100%;
+    font-size: 18px;
+    font-family: "Arial", sans-serif;
+    padding: 0;
+    background: #fff;
 }
 
 .wrapper {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
-.burger-illustraion {
-	position: relative;
-	width: 438px;
-	height: 525px;
-	pointer-events: none;
+.burger-illustration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    width: 438px;
+    height: 525px;
+    pointer-events: none;
 }
 
-.burger-illustraion__layer {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(-40px);
-	transition: transform .3s ease-out;
+.burger-illustration__layer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    animation: slideIn .3s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-60px);
 }
 
-.burger-illustraion__layer.active {
-	opacity: 1;
-	transform: translateY(0);
+/*.burger-illustration__layer.active {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+.burger-illustration__layer--bread-1 {
+    z-index: 0;
+    order: 1;
+}
+
+.burger-illustration__layer--ketchup {
+    z-index: 1;
+    order: 2;
+    height: 20px;
+    animation-delay: .1s;
+}
+
+.burger-illustration__layer--meat-1 {
+    z-index: 2;
+    order: 3;
+    animation-delay: .2s;
+}
+
+.burger-illustration__layer--salad {
+    z-index: 3;
+    order: 4;
+    height: 35px;
+    animation-delay: .3s;
+}
+
+.burger-illustration__layer--meat-2 {
+    z-index: 4;
+    order: 5;
+    animation-delay: .4s;
+}
+
+.burger-illustration__layer--mayonnaise {
+    z-index: 5;
+    order: 6;
+    height: 20px;
+    animation-delay: .5s;
+}
+
+.burger-illustration__layer--tomato {
+    z-index: 6;
+    order: 7;
+    height: 35px;
+    animation-delay: .6s;
+}
+
+.burger-illustration__layer--cheese {
+    z-index: 7;
+    order: 8;
+    animation-delay: .7s;
+}
+
+.burger-illustration__layer--bread-2 {
+    z-index: 8;
+    order: 9;
+    animation-delay: .8s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 fieldset {
-	display: flex;
-	flex-direction: column;
-	width: 400px;
-	align-items: flex-start;
-	line-height: 32px;
-	margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: flex-start;
+    line-height: 32px;
+    margin: 30px 0;
+}
+
+.form__row label span {
+    color: #999;
+    font-style: italic;
+}
+
+.result {
+    font-size: 32px;
+    font-weight: bold;
 }
