@@ -1,18 +1,18 @@
-const HAMBURGER = {
-    size: {
-        small: [5, 20],
-        large: [10, 40]
-    },
-    toppings: {
-        tomato: [1.5, 10],
-        salad: [2, 5],
-        cheese: [1, 20]
-    },
-    supplements: {
-        ketchup: [1.5, 0],
-        mayonnaise: [2, 5]
-    }
-};
+    const HAMBURGER = {
+        size: {
+            small: [5, 20],
+            large: [10, 40]
+        },
+        toppings: {
+            tomato: [1.5, 10],
+            salad: [2, 5],
+            cheese: [1, 20]
+        },
+        supplements: {
+            ketchup: [1.5, 0],
+            mayonnaise: [2, 5]
+        }
+    };
 
 // Hamburger Class Create
 class Hamburger {
