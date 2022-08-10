@@ -30,15 +30,15 @@ const updateParagraphs = () => {
       wordsCount++;
     }
 
-    // for(let question of questions) {
-    //   const x = "&nbsp;&#129300;";
-    //   result = result.replace(question, x);
-    // }
-    //
-    // for(let screamer of screamers) {
-    //   const x = "&nbsp;&#128558";
-    //   result = result.replace(screamer, x);
-    // }
+    for(let question of questions) {
+      const x = "&nbsp;&#129300;";
+      result = result.replace(question, x);
+    }
+
+    for(let screamer of screamers) {
+      const x = "&nbsp;&#128558";
+      result = result.replace(screamer, x);
+    }
     const counter = `<span>There is ${wordsCount} words in this paragraph</span>`
 
     result =
