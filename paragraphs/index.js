@@ -20,7 +20,7 @@ for(let paragraph of paragraphs) {
     plainText = plainText.replace(word, template)
   }
 
-  const counter = `<span>There is ${words.length} words in this paragraph</span>`;
+  const counter = `<span>There is ${wordsLength} words in this paragraph</span>`;
 
   const link = "<a href='https://forcemipsum.com/'>forcemipsum.com</a>";
 
