@@ -4,7 +4,6 @@ for(let paragraph of paragraphs) {
   let render = "";
 
   let plainText = paragraph.innerText;
-  const sentence = new RegExp("/\?/g");
   plainText = plainText.split(". ").join(". <br />");
   plainText = plainText.split("! ").join("! <br />");
   plainText = plainText.split("? ").join("? <br />");
