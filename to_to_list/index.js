@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+const active = "active";
 
 const renderForm = () => {
   let render = `
@@ -33,7 +34,6 @@ const renderRow = (value,idNum) => {
 };
 
 const addToDoLine = () => {
-  const active = "active";
   const toDoAdd = document.querySelector(".form__add-button");
   const toDoInput = document.getElementById("input-to-do");
   const toDoList = document.querySelector(".form__to-do-list");
@@ -44,7 +44,7 @@ const addToDoLine = () => {
   toDoInput.addEventListener("input", e => {
     e.preventDefault();
     targetVal = e.target.value;
-    if (targetVal === "") {
+    if (targetVal.length < 3) {
       toDoAdd.classList.remove(active);
       return;
     }
@@ -71,9 +71,9 @@ const initChackboxes = () => {
     checkbox.addEventListener("change", event => {
       const row = event.target.closest(".form__to-do");
       if (event.currentTarget.checked) {
-        row.classList.add("active");
+        row.classList.add(active);
       } else {
-        row.classList.remove("active");
+        row.classList.remove(active);
       }
     });
   } 
@@ -95,12 +95,14 @@ const initEditEvent = button => {
   const toDoField = document.querySelector(".form__edit-input");
 
   toDoField.addEventListener("input", e => {
-    e.target
-      .closest(".form__to-do")
-      .querySelector(".form__row label").innerText = e.target.value;
-    e.target
-      .closest(".form__to-do")
-      .querySelector(".form__row input[type='checkbox']").value = e.target.value;
+    const parent = e.target.closest(".form__to-do");
+    const checkbox = parent.querySelector(".form__row input[type='checkbox']");
+    if (e.target.value.length > 3) {
+      parent.querySelector(".form__row label").innerText = e.target.value;
+    } else {
+      alert("Not so fast, dude! You must enter at least 3 letters");
+    }
+    parent.classList.remove(active);
   });
 
   const editOkButton = document.querySelector(".form__edit-ok");
@@ -109,6 +111,7 @@ const initEditEvent = button => {
     form.classList.remove("edit");
     removeLine();
     editLine();
+    initChackboxes();
   });
 }
 
