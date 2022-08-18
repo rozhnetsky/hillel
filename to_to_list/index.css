@@ -1,0 +1,185 @@
+html,
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+
+.form {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  width: 500px;
+  overflow: hidden;
+}
+
+.form__to-do {
+  position: relative;
+}
+
+.form__to-do.active .form__row {
+  background: #d9d9ff;
+}
+
+.form__to-do-list, .form__input-row {
+  width: 100%;
+}
+
+.form input[type="text"] {
+  height: 40px;
+  width: calc(100% - 44px);
+  padding: 4px 20px;
+  font-size: 30px;
+}
+
+.form__edit-ok {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.form__row {
+  width: calc(100% - 32px);
+  padding: 12px 16px;
+  background: #eee;
+  border-radius: 6px;
+  align-items: center;
+  margin-bottom: 2px;
+  font-size: 24px;
+}
+
+.form__row label {
+  max-width: 370px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form__row input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin: 0 16px 0 0;
+}
+
+.form__input-row {
+  position: relative;
+}
+
+.form__add-button {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+
+.form__add-button svg {
+  width: 48px;
+  height: 48px;
+}
+
+.form__add-button {
+  display: none;
+}
+
+.form__add-button.active {
+  display: block;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.form__edit-row {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.form__edit-row input.form__edit-input {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.form.edit {
+  pointer-events: none;
+}
+
+.form__edit-button {
+  right: 50px;
+}
+
+.form__remove-button {
+  right: 20px;
+}
+
+.form__edit-button, .form__remove-button {
+  position: absolute;
+  top: 14px;
+}
+
+.form__edit-button, .form__remove-button, .form__edit-ok {
+  cursor: pointer;
+}
+
+.form.edit .form__edit-input, .form.edit .form__edit-ok {
+  pointer-events: all;
+}
+
+.form.edit .form__row, .form.edit .form__input-row {
+  opacity: 0.5;
+}
+
+.form.edit .form__remove-button, .form.edit .form__edit-button {
+  opacity: 0;
+}
+
+.form__submit {
+  width: 100%;
+  height: 48px;
+  margin-top: 32px;
+}
+
+.form__to-do:last-child {
+  margin-bottom: 32px;
+}
+
+.form__input-row label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.error {
+  color: red;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.form .form__success {
+  display: none;
+  background: #fff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.form.success .form__success {
+  display: flex;
+}
