@@ -94,7 +94,7 @@ const initEditEvent = button => {
 
   const toDoField = document.querySelector(".form__edit-input");
 
-  toDoField.addEventListener("input", e => {
+  toDoField.addEventListener("change", e => {
     const parent = e.target.closest(".form__to-do");
     const checkbox = parent.querySelector(".form__row input[type='checkbox']");
     if (e.target.value.length > 3) {
