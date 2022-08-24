@@ -50,3 +50,9 @@ body {
 .form__row.hidden {
   display: none;
 }
+
+#result {
+  padding: 16px 0;
+  font-size: 16px;
+  text-align: center;
+}
