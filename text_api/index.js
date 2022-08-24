@@ -26,8 +26,8 @@ const renderForm = () => {
             </div>
             <span id="error"></span>
             <input type="submit" value="Send Request" />
-        </form>
-        <div id="result"></div>`;
+            <div id="result"></div>
+        </form>`;
     document.body.innerHTML += render;
 };
 
@@ -70,9 +70,11 @@ const validateFrom = form => {
                 throwError("please enter a Number");
                 return;
             };
-            if (numType === "year" && input.value.length !== 4 || input.value > 2020 || input.value < 1900) {
-                throwError("please enter a year within 1900-2020");
-                return;
+            if (numType === "year") {
+                if (input.value.length !== 4 || input.value > 2020 || input.value < 1900) {
+                    throwError("please enter a year within 1900-2020");
+                    return;
+                }
             }
             resolve(input.value);
         } else {
