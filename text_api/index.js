@@ -53,7 +53,7 @@ const initTypeSelect = form => {
 };
 
 const validateFrom = form => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const input = form.querySelector(`#number-input`);
         const day = form.querySelector(`#date-input`);
         const month = form.querySelector(`#month-input`);
@@ -109,7 +109,12 @@ const createFact = (type, number) => {
     return new Promise((resolve, reject) => {
         const url = `http://numbersapi.com/${number}/${type}?callback=showNumber`;
         const data = fetch(url, {method: "GET"});
-        resolve(data);
+        data.then(e => {
+            resolve(data);
+        })
+        .catch(error => {
+            reject("Something wrong :(");
+        });
     });
 };
 
